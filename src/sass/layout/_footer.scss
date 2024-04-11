@@ -1,0 +1,22 @@
+@use "../utils/" as *;
+
+footer{
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 209px;
+  gap: 30px;
+
+  color: $white;
+  fill: $white;
+  background-color: $black;
+
+  font-size: 24px;
+  font-weight: 500;
+
+  @media (max-width:769px){
+    font-size: 12px;
+  }
+}
