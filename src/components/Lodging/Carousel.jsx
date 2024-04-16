@@ -25,6 +25,7 @@ export function Carousel({pictures, title}) {
   
   // Condition d'affichage de la navigation du carousel
   let hidden = false
+  
   if(pictures.length > 1){
     hidden = true
   }else if(pictures.length == 1){

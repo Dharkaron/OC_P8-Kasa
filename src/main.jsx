@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Root } from './components/Root/Root'
 import { About } from './pages/About'
-import { Lodging } from './pages/Lodging'
+import { Lodging }  from './pages/Lodging'
 import ErrorPage from './pages/Error'
 
 import lodgingData from "./assets/logements.json" //// fichier JSON contenant les données des logements
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path:'lodging/:id',
-        element: <Lodging data={lodgingData}/>
+        element: <Lodging data={lodgingData}/>,
       },
       {
         path:'about',

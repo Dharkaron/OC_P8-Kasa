@@ -1,20 +1,23 @@
 import { Carousel } from "../components/Lodging/Carousel";
 import { Collapse } from "../components/Collapse";
-import { useParams, redirect } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useParams,  /* redirect */  } from "react-router-dom";
+//import { Suspense, lazy, useEffect, useState } from "react";
 import PropTypes from 'prop-types'
 
 import Tag from "../components/Lodging/Tag";
 import ErrorPage from "./Error";
 import { Stars } from "../components/Lodging/Stars";
+import { AddLineBreak } from "../components/AddLineBreak";
 
 
 
 
 export function Lodging({data}) {
 
+
+
   const {id} = useParams()
-  const [lodging, setlodging] = useState(null)
+/*   const [lodging, setlodging] = useState()
 
 
   useEffect(() => {
@@ -26,18 +29,21 @@ export function Lodging({data}) {
       setlodging(null)
       redirect(<ErrorPage/>)
     }
-}, [data,id])
+  }, [data,id])
 
-
-if (!id || !lodging){
-   return (<ErrorPage/>)
-}  
-
-  /* const lodging = data.find((currentData) => currentData.id == id)
 
   if (!id || !lodging){
+    console.log("error")
+    return <ErrorPage/>
+    
+  } */  
+
+ const lodging = data.find((currentData) => currentData.id == id)
+
+  if (!id || !lodging){
+    console.log("error")
     return (<ErrorPage/>)
-  } */     
+  }   
 
 
   return <>
@@ -60,7 +66,9 @@ if (!id || !lodging){
 
           <figure className="host_info">
             <img src={lodging.host.picture} alt={`Photo de profil de ${lodging.host.name}`} />
-            <figcaption className="host_name" dangerouslySetInnerHTML={{__html:lodging.host.name.replace(` `,`<br/>`)}}/>
+            {/* Ajout d'un retour à la ligne entre le prénom et le nom de l'hôte */}
+            {/* alternative: dangerouslySetInnerHTML={{__html:lodging.host.name.replace(` `,`<br/>`)}}*/}
+            <figcaption className="host_name" >{AddLineBreak((lodging.host.name), (' '))}</figcaption>
           </figure>
 
           <Stars rating={lodging.rating}/>
@@ -79,5 +87,5 @@ if (!id || !lodging){
 
 
 Lodging.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
 }

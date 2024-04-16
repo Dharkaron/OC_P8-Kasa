@@ -17,7 +17,7 @@ header{
     justify-content: flex-end;
     gap: 57px;
 
-    a{
+    .navLink{
       font-size: 24px;
       font-weight: 500;
 
@@ -40,7 +40,8 @@ header{
       gap:26px;
 
       .navLink{
-        font-size: 18px;
+        font-size: 12px;
+        text-transform: uppercase;
       }
     }
   }

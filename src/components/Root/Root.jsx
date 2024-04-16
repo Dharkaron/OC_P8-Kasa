@@ -6,8 +6,10 @@ import {Header} from './Header'
 export function Root() {
 
   return <>
+  
     <Header/>
-    <main className="main_container">
+
+    <main className="main_container">    
       <Outlet/>
     </main>
     <Footer/>

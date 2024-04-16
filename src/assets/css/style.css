@@ -212,11 +212,11 @@ header nav {
   justify-content: flex-end;
   gap: 57px;
 }
-header nav a {
+header nav .navLink {
   font-size: 24px;
   font-weight: 500;
 }
-header nav a:hover {
+header nav .navLink:hover {
   text-decoration: underline;
 }
 @media (max-width: 769px) {
@@ -231,7 +231,8 @@ header nav a:hover {
     gap: 26px;
   }
   header .navMenu .navLink {
-    font-size: 18px;
+    font-size: 12px;
+    text-transform: uppercase;
   }
 }
 
@@ -248,10 +249,15 @@ footer {
   background-color: rgb(0, 0, 0);
   font-size: 24px;
   font-weight: 500;
+  text-align: center;
 }
 @media (max-width: 769px) {
   footer {
     font-size: 12px;
+    gap: 15px;
+  }
+  footer p {
+    max-width: 140px;
   }
 }
 
@@ -309,6 +315,7 @@ footer {
   color: rgb(255, 255, 255);
   font-size: 18px;
   font-weight: 700;
+  padding-right: 20px;
 }
 .home_content .gallery .card a::before {
   content: "";
@@ -344,34 +351,44 @@ footer {
   font-size: 36px;
   font-weight: 500;
   color: #FF6060;
+  margin-bottom: 5px;
+}
+@media (max-width: 769px) {
+  .lodging_info .lodging_titles h2 {
+    font-size: 18px;
+  }
 }
 .lodging_info .lodging_titles p {
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 20px;
 }
+@media (max-width: 769px) {
+  .lodging_info .lodging_titles p {
+    font-size: 14px;
+  }
+}
 .lodging_info .lodging_titles .lodging_tags {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   gap: 10px;
-  font-size: 14px;
-  font-weight: 700;
 }
-@media (max-width: 769px) {
-  .lodging_info .lodging_titles .lodging_tags {
-    font-size: 10px;
-  }
-}
-.lodging_info .lodging_titles .lodging_tags span {
+.lodging_info .lodging_titles .lodging_tags .tag_content {
   color: rgb(255, 255, 255);
   background-color: #FF6060;
   border-radius: 10px;
   padding: 4px 40px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+@media (max-width: 769px) {
+  .lodging_info .lodging_titles .lodging_tags .tag_content {
+    font-size: 10px;
+  }
 }
 .lodging_info .lodging_host {
   display: flex;
@@ -402,6 +419,9 @@ footer {
 }
 .lodging_info .lodging_host .host_info .host_name {
   text-align: right;
+  color: #FF6060;
+  font-size: 18px;
+  font-weight: 500;
 }
 .lodging_info .lodging_host .lodging_rating {
   display: flex;
