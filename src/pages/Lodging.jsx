@@ -1,7 +1,6 @@
 import { Carousel } from "../components/Lodging/Carousel";
 import { Collapse } from "../components/Collapse";
-import { useParams,  /* redirect */  } from "react-router-dom";
-//import { Suspense, lazy, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import PropTypes from 'prop-types'
 
 import Tag from "../components/Lodging/Tag";
@@ -17,26 +16,7 @@ export function Lodging({data}) {
 
 
   const {id} = useParams()
-/*   const [lodging, setlodging] = useState()
-
-
-  useEffect(() => {
-    const dataFound = data.find((currentData) => currentData.id == id)
-
-    if (dataFound) {
-      setlodging(dataFound)
-    } else {
-      setlodging(null)
-      redirect(<ErrorPage/>)
-    }
-  }, [data,id])
-
-
-  if (!id || !lodging){
-    console.log("error")
-    return <ErrorPage/>
-    
-  } */  
+ 
 
  const lodging = data.find((currentData) => currentData.id == id)
 
