@@ -13,17 +13,15 @@ import { AddLineBreak } from "../components/AddLineBreak";
 
 export function Lodging({data}) {
 
-
-
   const {id} = useParams()
- 
+  const lodging = data.find((currentData) => currentData.id === id)
 
- const lodging = data.find((currentData) => currentData.id == id)
 
-  if (!id || !lodging){
+  //On vérifie si "lodging" est bien défini avant d'accéder au données
+  if(!lodging || !id){
     console.log("error")
-    return (<ErrorPage/>)
-  }   
+    return(<ErrorPage/>)
+  } 
 
 
   return <>
