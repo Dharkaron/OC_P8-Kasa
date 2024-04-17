@@ -13,6 +13,7 @@ import { AddLineBreak } from "../components/AddLineBreak";
 
 export function Lodging({data}) {
 
+
   const {id} = useParams()
   const lodging = data.find((currentData) => currentData.id === id)
 
@@ -21,7 +22,7 @@ export function Lodging({data}) {
   if(!lodging || !id){
     console.log("error")
     return(<ErrorPage/>)
-  } 
+  }
 
 
   return <>
