@@ -216,9 +216,7 @@ header nav .navLink {
   font-size: 24px;
   font-weight: 500;
 }
-header nav .navLink:hover {
-  text-decoration: underline;
-}
+header nav .navLink:hover,
 header nav .activeLink {
   text-decoration: underline;
 }
